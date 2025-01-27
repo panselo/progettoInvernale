@@ -17,10 +17,15 @@ public class Squadra extends Team {
     }
     public Squadra(String nome, int setVinti, int partiteVinte, int partitePerse, int punti) throws Exception {
         super(nome);
-        setSetVinti(setVinti);
-        setPartiteVinte(partiteVinte);
-        setPartitePerse(partitePerse);
-        setPunti(punti);
+        try{
+            setSetVinti(setVinti);
+            setPartiteVinte(partiteVinte);
+            setPartitePerse(partitePerse);
+            setPunti(punti);
+        }catch(Exception e){
+            System.err.println("Errore!!");
+        }
+
     }
 
     // Metodo per registrare i risultati della partita
@@ -60,10 +65,6 @@ public class Squadra extends Team {
         return 0;
     }
 
-    public int getSetVinti() {
-        return setVinti;
-    }
-
     public int getPartiteVinte() {
         return partiteVinte;
     }
@@ -73,22 +74,30 @@ public class Squadra extends Team {
     }
 
     public void setPunti(int punti) throws Exception {
+        if (punti < 0){
+            throw new Exception("Operazione non consentita");
+        }
         this.punti = punti;
-        throw new Exception("Operazione non consentita");
     }
 
     public void setSetVinti(int setVinti) throws Exception{
+        if (setVinti < 0){
+            throw new Exception("Operazione non consentita");
+        }
         this.setVinti = setVinti;
-        throw new Exception("Operazione non consentita");
     }
 
     public void setPartiteVinte(int partiteVinte) throws Exception {
+        if (partiteVinte < 0){
+            throw new Exception("Operazione non consentita");
+        }
         this.partiteVinte = partiteVinte;
-        throw new Exception("Operazione non consentita");
     }
 
     public void setPartitePerse(int partitePerse) throws Exception{
+        if (partitePerse < 0){
+            throw new Exception("Operazione non consetita");
+        }
         this.partitePerse = partitePerse;
-        throw new Exception("Operazione non consetita");
     }
 }

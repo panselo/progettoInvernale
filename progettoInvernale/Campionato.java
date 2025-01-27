@@ -39,10 +39,15 @@ public class Campionato {
         squadre.remove(indice);
     }
 
-    public void modificaPartita(int indice, int set, String nome) throws Exception {
+    public void modificaPartita(int indice, int set, String nome) throws Exception{
         int partiteVinte = squadre.get(indice).getPartiteVinte();
         int partitePerse = squadre.get(indice).getPartitePerse();
         int punti = squadre.get(indice).getPunti();
-        squadre.set(indice, new Squadra(nome, set, partiteVinte, partitePerse, punti));
+        try{
+            squadre.set(indice, new Squadra(nome, set, partiteVinte, partitePerse, punti));
+        }catch(Exception e){
+            System.err.println("Errore!!");
+        }
+
     }
 }
