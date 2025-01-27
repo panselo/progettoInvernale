@@ -1,3 +1,5 @@
+import java.util.concurrent.ExecutionException;
+
 public class Squadra extends Team {
 
     private int setVinti;
@@ -13,12 +15,12 @@ public class Squadra extends Team {
         this.partitePerse = 0;
         this.punti = 0;
     }
-    public Squadra(String nome, int setVinti, int partiteVinte, int partitePerse, int punti) {
+    public Squadra(String nome, int setVinti, int partiteVinte, int partitePerse, int punti) throws Exception {
         super(nome);
-        this.setVinti = setVinti;
-        this.partiteVinte = partiteVinte;
-        this.partitePerse = partitePerse;
-        this.punti = punti;
+        setSetVinti(setVinti);
+        setPartiteVinte(partiteVinte);
+        setPartitePerse(partitePerse);
+        setPunti(punti);
     }
 
     // Metodo per registrare i risultati della partita
@@ -68,5 +70,25 @@ public class Squadra extends Team {
 
     public int getPartitePerse() {
         return partitePerse;
+    }
+
+    public void setPunti(int punti) throws Exception {
+        this.punti = punti;
+        throw new Exception("Operazione non consentita");
+    }
+
+    public void setSetVinti(int setVinti) throws Exception{
+        this.setVinti = setVinti;
+        throw new Exception("Operazione non consentita");
+    }
+
+    public void setPartiteVinte(int partiteVinte) throws Exception {
+        this.partiteVinte = partiteVinte;
+        throw new Exception("Operazione non consentita");
+    }
+
+    public void setPartitePerse(int partitePerse) throws Exception{
+        this.partitePerse = partitePerse;
+        throw new Exception("Operazione non consetita");
     }
 }

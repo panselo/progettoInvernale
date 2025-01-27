@@ -39,7 +39,7 @@ public class Campionato {
         squadre.remove(indice);
     }
 
-    public void modificaPartita(int indice, int set, String nome){
+    public void modificaPartita(int indice, int set, String nome) throws Exception {
         int partiteVinte = squadre.get(indice).getPartiteVinte();
         int partitePerse = squadre.get(indice).getPartitePerse();
         int punti = squadre.get(indice).getPunti();

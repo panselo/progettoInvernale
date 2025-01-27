@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class CampionatoPallavolo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         Scanner scanner = new Scanner(System.in);
         Campionato campionato = new Campionato();
